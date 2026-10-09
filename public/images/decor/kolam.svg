@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240">
+  <defs>
+    <path id="p1" d="M0-38C-15-50-15-68 0-82C15-68 15-50 0-38Z"/>
+    <g id="p1x2"><use href="#p1"/><use href="#p1" transform="rotate(180)"/></g>
+    <path id="p2" d="M0-84C-7-92-7-100 0-108C7-100 7-92 0-84Z"/>
+    <g id="p2x4"><use href="#p2"/><use href="#p2" transform="rotate(90)"/><use href="#p2" transform="rotate(180)"/><use href="#p2" transform="rotate(270)"/></g>
+  </defs>
+  <g transform="translate(120 120)">
+    <circle r="114" fill="none" stroke="#B8324F" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="0.1 14.23"/>
+    <circle r="119" fill="none" stroke="#C9962F" stroke-width="1"/>
+    <g fill="#F7B238" stroke="#8B3A1E" stroke-width="1" stroke-linejoin="round">
+      <use href="#p2x4"/>
+      <use href="#p2x4" transform="rotate(22.5)"/>
+      <use href="#p2x4" transform="rotate(45)"/>
+      <use href="#p2x4" transform="rotate(67.5)"/>
+    </g>
+    <g fill="#E58AA2" stroke="#8B1E3A" stroke-width="1.1" stroke-linejoin="round">
+      <use href="#p1x2"/>
+      <use href="#p1x2" transform="rotate(45)"/>
+      <use href="#p1x2" transform="rotate(90)"/>
+      <use href="#p1x2" transform="rotate(135)"/>
+    </g>
+    <circle r="31" fill="none" stroke="#C9962F" stroke-width="3" stroke-linecap="round" stroke-dasharray="0.1 12.15"/>
+    <circle r="22" fill="#FFF3D1" stroke="#C9962F" stroke-width="1.2"/>
+    <path d="M18 0L7.39 3.06L12.73 12.73L3.06 7.39L0 18L-3.06 7.39L-12.73 12.73L-7.39 3.06L-18 0L-7.39-3.06L-12.73-12.73L-3.06-7.39L0-18L3.06-7.39L12.73-12.73L7.39-3.06Z" fill="#B8324F"/>
+    <circle r="3" fill="#FFF3D1"/>
+  </g>
+</svg>

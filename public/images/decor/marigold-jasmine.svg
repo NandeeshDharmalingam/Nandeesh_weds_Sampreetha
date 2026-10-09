@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 160" width="220" height="160">
+  <defs>
+    <linearGradient id="lg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2B5F2D"/>
+      <stop offset=".5" stop-color="#4C8F3C"/>
+      <stop offset="1" stop-color="#2F6B2F"/>
+    </linearGradient>
+    <g id="lf">
+      <path d="M0 0C-9-8-10-24 0-40C10-24 9-8 0 0Z" fill="url(#lg)" stroke="#2B5F2D" stroke-width=".6"/>
+      <path d="M0-2V-35" fill="none" stroke="#B9D98A" stroke-width=".9" stroke-linecap="round"/>
+    </g>
+    <path id="mp" d="M0-3C-5.5-8-5.5-19 0-26C5.5-19 5.5-8 0-3Z"/>
+    <g id="mr4"><use href="#mp"/><use href="#mp" transform="rotate(90)"/><use href="#mp" transform="rotate(180)"/><use href="#mp" transform="rotate(270)"/></g>
+    <g id="mr16"><use href="#mr4"/><use href="#mr4" transform="rotate(22.5)"/><use href="#mr4" transform="rotate(45)"/><use href="#mr4" transform="rotate(67.5)"/></g>
+    <g id="mari">
+      <use href="#mr16" fill="#F39C1D" stroke="#C97100" stroke-width=".5"/>
+      <use href="#mr16" fill="#FFB52E" stroke="#D98200" stroke-width=".4" transform="rotate(11.25) scale(.72)"/>
+      <use href="#mr16" fill="#FFD24D" transform="scale(.45)"/>
+      <circle r="3" fill="#D97706"/>
+    </g>
+    <path id="jpz" d="M0 0C-3-2.4-3.4-6 0-9.5C3.4-6 3-2.4 0 0Z"/>
+    <g id="jas">
+      <g fill="#fff" stroke="#CDBA8A" stroke-width=".55">
+        <use href="#jpz"/><use href="#jpz" transform="rotate(60)"/><use href="#jpz" transform="rotate(120)"/>
+        <use href="#jpz" transform="rotate(180)"/><use href="#jpz" transform="rotate(240)"/><use href="#jpz" transform="rotate(300)"/>
+      </g>
+      <circle r="2" fill="#EFD27A"/>
+    </g>
+    <ellipse id="bud" rx="2" ry="4.2" fill="#fff" stroke="#CDBA8A" stroke-width=".55"/>
+  </defs>
+
+  <g transform="translate(110 108)">
+    <use href="#lf" transform="rotate(-165) scale(1.35)"/>
+    <use href="#lf" transform="rotate(-135) scale(1.5)"/>
+    <use href="#lf" transform="rotate(-105) scale(1.55)"/>
+    <use href="#lf" transform="rotate(-72) scale(1.6)"/>
+    <use href="#lf" transform="rotate(-40) scale(1.5)"/>
+    <use href="#lf" transform="rotate(-10) scale(1.35)"/>
+    <use href="#lf" transform="rotate(25) scale(1.2)"/>
+    <use href="#lf" transform="rotate(160) scale(1.2)"/>
+  </g>
+
+  <use href="#mari" transform="translate(80 98) scale(1.12)"/>
+  <use href="#mari" transform="translate(138 104)"/>
+  <use href="#mari" transform="translate(108 66) scale(.82)"/>
+  <use href="#mari" transform="translate(112 124) scale(.7)"/>
+
+  <use href="#jas" transform="translate(52 66)"/>
+  <use href="#jas" transform="translate(40 108) scale(.9)"/>
+  <use href="#jas" transform="translate(158 66) scale(1.05)"/>
+  <use href="#jas" transform="translate(176 104)"/>
+  <use href="#jas" transform="translate(86 52) scale(.8)"/>
+  <use href="#jas" transform="translate(140 40) scale(.9)"/>
+  <use href="#jas" transform="translate(70 132) scale(.85)"/>
+  <use href="#jas" transform="translate(150 132) scale(.9)"/>
+  <use href="#bud" transform="translate(64 44) rotate(-30)"/>
+  <use href="#bud" transform="translate(172 48) rotate(25)"/>
+  <use href="#bud" transform="translate(30 88) rotate(-70)"/>
+  <use href="#bud" transform="translate(192 86) rotate(70)"/>
+  <use href="#bud" transform="translate(112 142) rotate(8)"/>
+</svg>

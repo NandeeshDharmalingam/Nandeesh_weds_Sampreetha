@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 300" width="420" height="300" role="img" aria-label="Wedding mandapam">
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F6E1A0"/>
+      <stop offset=".5" stop-color="#D7A93F"/>
+      <stop offset="1" stop-color="#A87A22"/>
+    </linearGradient>
+    <linearGradient id="pil" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#C9A24E"/>
+      <stop offset=".35" stop-color="#FBEFC4"/>
+      <stop offset=".7" stop-color="#E8C877"/>
+      <stop offset="1" stop-color="#B58A2E"/>
+    </linearGradient>
+    <linearGradient id="roof" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9A2A3C"/>
+      <stop offset="1" stop-color="#6E1727"/>
+    </linearGradient>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFF4DA"/>
+      <stop offset="1" stop-color="#F6DFB0"/>
+    </linearGradient>
+    <pattern id="val" x="44" y="100" width="56" height="18" patternUnits="userSpaceOnUse">
+      <path d="M0 0A14 16 0 0 0 28 0Z" fill="#7A1F2E" stroke="#D7A93F" stroke-width="1"/>
+      <path d="M28 0A14 16 0 0 0 56 0Z" fill="#D7A93F" stroke="#8C6420" stroke-width=".6"/>
+    </pattern>
+    <g id="pillar">
+      <rect x="0" y="0" width="22" height="162" fill="url(#pil)" stroke="#8C6420" stroke-width=".8"/>
+      <path d="M5 8V154M11 8V154M17 8V154" stroke="#8C6420" stroke-opacity=".3" stroke-width="1"/>
+      <rect x="-5" y="-8" width="32" height="10" rx="2" fill="url(#gold)" stroke="#8C6420" stroke-width=".8"/>
+      <rect x="-4" y="154" width="30" height="8" rx="1.5" fill="url(#gold)" stroke="#8C6420" stroke-width=".8"/>
+    </g>
+    <g id="deepa">
+      <path d="M-8 0H8L5 -8H-5Z" fill="url(#gold)" stroke="#8C6420" stroke-width=".6"/>
+      <path d="M0 -9C-3-12-3-17 0-22C3-17 3-12 0-9Z" fill="#FFB52E"/>
+    </g>
+  </defs>
+
+  <ellipse cx="210" cy="289" rx="196" ry="6" fill="#6B4A12" opacity=".14"/>
+  <rect x="30" y="276" width="360" height="12" rx="2" fill="url(#gold)" stroke="#8C6420" stroke-width=".8"/>
+  <rect x="44" y="266" width="332" height="10" rx="2" fill="url(#gold)" stroke="#8C6420" stroke-width=".8"/>
+  <rect x="58" y="258" width="304" height="8" fill="#8A2233"/>
+
+  <path d="M126 258V160Q126 112 210 112Q294 112 294 160V258Z" fill="url(#wall)" stroke="#C9962F" stroke-width="2"/>
+  <path d="M140 258V162Q140 126 210 126Q280 126 280 162V258Z" fill="none" stroke="#C9962F" stroke-width="1" stroke-dasharray="2 4"/>
+  <circle cx="210" cy="176" r="22" fill="none" stroke="#C9962F" stroke-width="1.2"/>
+  <circle cx="210" cy="176" r="14" fill="#F3C8D4" stroke="#B3405F" stroke-width="1"/>
+  <circle cx="210" cy="176" r="6" fill="#FFF3D1" stroke="#C9962F"/>
+
+  <g transform="translate(112 100)"><use href="#pillar" transform="scale(.78 .95)"/></g>
+  <g transform="translate(290 100)"><use href="#pillar" transform="scale(.78 .95)"/></g>
+  <g transform="translate(58 96)"><use href="#pillar"/></g>
+  <g transform="translate(340 96)"><use href="#pillar"/></g>
+
+  <path d="M40 98L110 52H310L380 98Z" fill="url(#roof)" stroke="#D7A93F" stroke-width="1.5"/>
+  <path d="M120 52L168 28H252L300 52Z" fill="#8E2434" stroke="#D7A93F" stroke-width="1.2"/>
+  <rect x="40" y="94" width="340" height="7" fill="url(#gold)" stroke="#8C6420" stroke-width=".7"/>
+  <rect x="44" y="101" width="332" height="18" fill="url(#val)"/>
+  <path d="M168 28L176 18H244L252 28Z" fill="url(#gold)" stroke="#8C6420" stroke-width=".7"/>
+  <ellipse cx="210" cy="13" rx="8" ry="9" fill="url(#gold)" stroke="#8C6420" stroke-width=".7"/>
+  <path d="M210 4V-0" stroke="#A87A22" stroke-width="1.5"/>
+
+  <path d="M80 122Q210 196 340 122" fill="none" stroke="#7FA050" stroke-width="2"/>
+  <path d="M80 122Q210 196 340 122" fill="none" stroke="#E27A08" stroke-width="10" stroke-linecap="round" stroke-dasharray="0.1 11"/>
+  <path d="M80 122Q210 196 340 122" fill="none" stroke="#FFC23A" stroke-width="6" stroke-linecap="round" stroke-dasharray="0.1 11"/>
+  <path d="M80 136Q210 214 340 136" fill="none" stroke="#6E9A52" stroke-width="2"/>
+  <path d="M80 136Q210 214 340 136" fill="none" stroke="#E8DFC4" stroke-width="7" stroke-linecap="round" stroke-dasharray="0.1 8"/>
+  <path d="M80 136Q210 214 340 136" fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="0.1 8"/>
+
+  <use href="#deepa" x="168" y="258"/>
+  <use href="#deepa" x="252" y="258"/>
+  <rect x="198" y="246" width="24" height="12" rx="3" fill="url(#gold)" stroke="#8C6420" stroke-width=".7"/>
+</svg>

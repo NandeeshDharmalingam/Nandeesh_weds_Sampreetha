@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 130" width="60" height="130">
+  <defs>
+    <linearGradient id="bud" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#A93560"/>
+      <stop offset=".6" stop-color="#7A1F44"/>
+      <stop offset="1" stop-color="#4A1230"/>
+    </linearGradient>
+  </defs>
+  <path d="M30 0C30 18 27 28 30 42" fill="none" stroke="#6E7B3A" stroke-width="3" stroke-linecap="round"/>
+  <path d="M30 40C13 53 7 84 30 124C53 84 47 53 30 40Z" fill="url(#bud)"/>
+  <g fill="none" stroke="#D77AA0" stroke-opacity=".55" stroke-width="1.2" stroke-linecap="round">
+    <path d="M30 52C19 63 17 86 30 112"/>
+    <path d="M30 52C41 63 43 86 30 112"/>
+    <path d="M14 66Q30 74 46 66"/>
+    <path d="M12 82Q30 92 48 82"/>
+    <path d="M17 98Q30 106 43 98"/>
+  </g>
+  <path d="M22 54C16 66 15 82 20 98" fill="none" stroke="#fff" stroke-opacity=".25" stroke-width="2" stroke-linecap="round"/>
+  <g fill="#E9D56A" stroke="#8C7A22" stroke-width=".6">
+    <path d="M30 42C27 46 24 47 22 50C26 51 29 49 30 47Z"/>
+    <path d="M30 42C33 46 36 47 38 50C34 51 31 49 30 47Z"/>
+  </g>
+</svg>

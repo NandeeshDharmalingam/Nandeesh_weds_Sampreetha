@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 520" width="400" height="520" role="img" aria-label="Temple gopuram">
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F6E1A0"/>
+      <stop offset=".5" stop-color="#D7A93F"/>
+      <stop offset="1" stop-color="#A87A22"/>
+    </linearGradient>
+    <linearGradient id="goldH" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#B98A2A"/>
+      <stop offset=".45" stop-color="#F8E4A4"/>
+      <stop offset="1" stop-color="#B98A2A"/>
+    </linearGradient>
+    <linearGradient id="sand" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F7E9C4"/>
+      <stop offset="1" stop-color="#E8CE98"/>
+    </linearGradient>
+    <linearGradient id="shade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fff" stop-opacity=".22"/>
+      <stop offset=".5" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#5a3a00" stop-opacity=".2"/>
+    </linearGradient>
+    <radialGradient id="doorGlow" cx="50%" cy="100%" r="95%">
+      <stop offset="0" stop-color="#F9D98A"/>
+      <stop offset=".45" stop-color="#9B4A22"/>
+      <stop offset="1" stop-color="#3E1212"/>
+    </radialGradient>
+    <pattern id="bayA" x="184" y="0" width="32" height="30" patternUnits="userSpaceOnUse">
+      <rect width="32" height="30" fill="url(#sand)"/>
+      <rect width="1.25" height="30" fill="#CDAA66"/>
+      <rect x="30.75" width="1.25" height="30" fill="#CDAA66"/>
+      <path d="M9.5 25V13Q9.5 6 16 6Q22.5 6 22.5 13V25Z" fill="#7A2A2A" stroke="#B2842A" stroke-width="1.3"/>
+      <rect x="8" y="25" width="16" height="2.4" fill="#B2842A"/>
+      <circle cx="16" cy="15" r="2" fill="#E8B84A"/>
+    </pattern>
+    <pattern id="bayB" href="#bayA" x="200"/>
+    <pattern id="scallop" x="196" y="0" width="8" height="5" patternUnits="userSpaceOnUse">
+      <path d="M0 0H8V.5A4 4.5 0 0 1 0 .5Z" fill="#9C6F1E"/>
+    </pattern>
+    <g id="kuta">
+      <rect x="-5" y="-6" width="10" height="6" fill="#7A2A2A" stroke="#A97C24" stroke-width=".8"/>
+      <path d="M-6.5-6Q0-17 6.5-6Z" fill="url(#gold)" stroke="#8C6420" stroke-width=".6"/>
+      <path d="M0-14V-18" stroke="#A97C24" stroke-width="1"/>
+      <circle cy="-18.5" r="1.3" fill="#D7A93F"/>
+    </g>
+    <g id="kalasa">
+      <path d="M-6 0H6L4.5-4H-4.5Z" fill="url(#goldH)" stroke="#8C6420" stroke-width=".5"/>
+      <ellipse cy="-12" rx="7.5" ry="8.5" fill="url(#goldH)" stroke="#8C6420" stroke-width=".7"/>
+      <rect x="-3.2" y="-24" width="6.4" height="6" fill="url(#goldH)"/>
+      <ellipse cy="-24" rx="5" ry="1.8" fill="#E9C468" stroke="#8C6420" stroke-width=".6"/>
+      <path d="M0-25C-2.5-29-2.5-32 0-36C2.5-32 2.5-29 0-25Z" fill="url(#goldH)" stroke="#8C6420" stroke-width=".5"/>
+    </g>
+  </defs>
+
+  <ellipse cx="200" cy="513" rx="190" ry="5" fill="#6B4A12" opacity=".16"/>
+
+  <!-- plinth -->
+  <rect x="22" y="498" width="356" height="14" rx="2" fill="url(#gold)" stroke="#8C6420" stroke-width="1"/>
+  <rect x="32" y="484" width="336" height="14" rx="2" fill="url(#gold)" stroke="#8C6420" stroke-width="1"/>
+
+  <!-- gateway tier with doorway -->
+  <g transform="translate(0 394)">
+    <rect x="40" width="320" height="90" fill="url(#bayB)" stroke="#B2842A" stroke-width="1.2"/>
+    <rect x="40" width="320" height="90" fill="url(#shade)"/>
+    <rect x="34" y="-7" width="332" height="7" fill="url(#gold)" stroke="#8C6420" stroke-width=".8"/>
+    <rect x="40" width="320" height="5" fill="url(#scallop)"/>
+    <rect x="146" y="8" width="10" height="82" fill="#CDAA66" stroke="#B2842A" stroke-width=".8"/>
+    <rect x="244" y="8" width="10" height="82" fill="#CDAA66" stroke="#B2842A" stroke-width=".8"/>
+    <path d="M156 90V46Q156 14 200 14Q244 14 244 46V90Z" fill="url(#gold)" stroke="#8C6420" stroke-width="1.2"/>
+    <path d="M168 90V48Q168 27 200 27Q232 27 232 48V90Z" fill="url(#doorGlow)"/>
+    <circle cx="200" cy="21" r="4.5" fill="#7A2A2A" stroke="#8C6420" stroke-width=".8"/>
+    <path d="M168 48Q168 27 200 27" fill="none" stroke="#FFF3C4" stroke-opacity=".5"/>
+  </g>
+
+  <!-- tiers -->
+  <g transform="translate(0 357)">
+    <rect x="56" width="288" height="30" fill="url(#bayA)" stroke="#B2842A" stroke-width="1"/>
+    <rect x="56" width="288" height="30" fill="url(#shade)"/>
+    <rect x="50" y="-7" width="300" height="7" fill="url(#gold)" stroke="#8C6420" stroke-width=".8"/>
+    <rect x="56" width="288" height="5" fill="url(#scallop)"/>
+  </g>
+  <g transform="translate(0 320)">
+    <rect x="72" width="256" height="30" fill="url(#bayB)" stroke="#B2842A" stroke-width="1"/>
+    <rect x="72" width="256" height="30" fill="url(#shade)"/>
+    <rect x="66" y="-7" width="268" height="7" fill="url(#gold)" stroke="#8C6420" stroke-width=".8"/>
+    <rect x="72" width="256" height="5" fill="url(#scallop)"/>
+  </g>
+  <g transform="translate(0 283)">
+    <rect x="88" width="224" height="30" fill="url(#bayA)" stroke="#B2842A" stroke-width="1"/>
+    <rect x="88" width="224" height="30" fill="url(#shade)"/>
+    <rect x="82" y="-7" width="236" height="7" fill="url(#gold)" stroke="#8C6420" stroke-width=".8"/>
+    <rect x="88" width="224" height="5" fill="url(#scallop)"/>
+  </g>
+  <g transform="translate(0 246)">
+    <rect x="104" width="192" height="30" fill="url(#bayB)" stroke="#B2842A" stroke-width="1"/>
+    <rect x="104" width="192" height="30" fill="url(#shade)"/>
+    <rect x="98" y="-7" width="204" height="7" fill="url(#gold)" stroke="#8C6420" stroke-width=".8"/>
+    <rect x="104" width="192" height="5" fill="url(#scallop)"/>
+  </g>
+  <g transform="translate(0 209)">
+    <rect x="120" width="160" height="30" fill="url(#bayA)" stroke="#B2842A" stroke-width="1"/>
+    <rect x="120" width="160" height="30" fill="url(#shade)"/>
+    <rect x="114" y="-7" width="172" height="7" fill="url(#gold)" stroke="#8C6420" stroke-width=".8"/>
+    <rect x="120" width="160" height="5" fill="url(#scallop)"/>
+  </g>
+  <g transform="translate(0 172)">
+    <rect x="136" width="128" height="30" fill="url(#bayB)" stroke="#B2842A" stroke-width="1"/>
+    <rect x="136" width="128" height="30" fill="url(#shade)"/>
+    <rect x="130" y="-7" width="140" height="7" fill="url(#gold)" stroke="#8C6420" stroke-width=".8"/>
+    <rect x="136" width="128" height="5" fill="url(#scallop)"/>
+  </g>
+  <g transform="translate(0 135)">
+    <rect x="152" width="96" height="30" fill="url(#bayA)" stroke="#B2842A" stroke-width="1"/>
+    <rect x="152" width="96" height="30" fill="url(#shade)"/>
+    <rect x="146" y="-7" width="108" height="7" fill="url(#gold)" stroke="#8C6420" stroke-width=".8"/>
+    <rect x="152" width="96" height="5" fill="url(#scallop)"/>
+  </g>
+
+  <!-- miniature shrines on the ledges -->
+  <use href="#kuta" x="45" y="387"/><use href="#kuta" x="355" y="387"/>
+  <use href="#kuta" x="61" y="350"/><use href="#kuta" x="339" y="350"/>
+  <use href="#kuta" x="77" y="313"/><use href="#kuta" x="323" y="313"/>
+  <use href="#kuta" x="93" y="276"/><use href="#kuta" x="307" y="276"/>
+  <use href="#kuta" x="109" y="239"/><use href="#kuta" x="291" y="239"/>
+  <use href="#kuta" x="125" y="202"/><use href="#kuta" x="275" y="202"/>
+  <use href="#kuta" x="141" y="165"/><use href="#kuta" x="259" y="165"/>
+  <use href="#kuta" transform="translate(151 128) scale(.7)"/><use href="#kuta" transform="translate(249 128) scale(.7)"/>
+
+  <!-- barrel-vault crown -->
+  <path d="M154 128V110Q154 84 200 84Q246 84 246 110V128Z" fill="url(#gold)" stroke="#8C6420" stroke-width="1"/>
+  <path d="M166 128V112Q166 97 200 97Q234 97 234 112V128Z" fill="#6A2222" stroke="#8C6420" stroke-width="1"/>
+  <path d="M180 128V117Q180 108 200 108Q220 108 220 117V128Z" fill="#3A1010"/>
+  <circle cx="200" cy="103" r="3.5" fill="#F0C85A"/>
+  <path d="M160 120Q164 92 200 89" fill="none" stroke="#FFF3C4" stroke-opacity=".6" stroke-width="1.2"/>
+
+  <!-- kalasams -->
+  <use href="#kalasa" transform="translate(158 98) scale(.55)"/>
+  <use href="#kalasa" transform="translate(242 98) scale(.55)"/>
+  <use href="#kalasa" transform="translate(176 88) scale(.75)"/>
+  <use href="#kalasa" transform="translate(224 88) scale(.75)"/>
+  <use href="#kalasa" transform="translate(200 84)"/>
+</svg>

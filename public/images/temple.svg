@@ -1,0 +1,179 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="still" viewBox="0 0 600 310" width="600" height="310" role="img" aria-label="Temple at dawn with a lotus pond">
+  <style>
+    .f{transform-box:fill-box;transform-origin:50% 100%;animation:fl 1.8s ease-in-out infinite}
+    .f2{animation-delay:-.7s}
+    @keyframes fl{0%,100%{transform:scale(1,1) rotate(0)}30%{transform:scale(.92,1.08) rotate(-2.5deg)}62%{transform:scale(1.06,.94) rotate(2.5deg)}}
+    @media (prefers-reduced-motion:reduce){.f{animation:none}}
+    svg:target .f{animation:none}
+  </style>
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F6E1A0"/>
+      <stop offset=".5" stop-color="#D7A93F"/>
+      <stop offset="1" stop-color="#A87A22"/>
+    </linearGradient>
+    <linearGradient id="goldH" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#B98A2A"/>
+      <stop offset=".45" stop-color="#F8E4A4"/>
+      <stop offset="1" stop-color="#B98A2A"/>
+    </linearGradient>
+    <linearGradient id="sand" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F7E9C4"/>
+      <stop offset="1" stop-color="#E8CE98"/>
+    </linearGradient>
+    <linearGradient id="shade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fff" stop-opacity=".22"/>
+      <stop offset=".5" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#5a3a00" stop-opacity=".2"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#FFE7A8" stop-opacity=".95"/>
+      <stop offset=".55" stop-color="#FFE2A0" stop-opacity=".4"/>
+      <stop offset="1" stop-color="#FFE2A0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="doorGlow" cx="50%" cy="100%" r="95%">
+      <stop offset="0" stop-color="#F9D98A"/>
+      <stop offset=".45" stop-color="#9B4A22"/>
+      <stop offset="1" stop-color="#3E1212"/>
+    </radialGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#D5EBE4"/>
+      <stop offset="1" stop-color="#A9D3CB"/>
+    </linearGradient>
+    <linearGradient id="petal" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#EE86AC"/>
+    </linearGradient>
+    <pattern id="bE" x="0" y="0" width="16" height="14" patternUnits="userSpaceOnUse">
+      <rect width="16" height="14" fill="url(#sand)"/>
+      <rect width=".8" height="14" fill="#CDAA66"/>
+      <rect x="15.2" width=".8" height="14" fill="#CDAA66"/>
+      <path d="M5 12V7Q5 3 8 3Q11 3 11 7V12Z" fill="#7A2A2A" stroke="#B2842A" stroke-width=".8"/>
+      <rect x="4" y="12" width="8" height="1.4" fill="#B2842A"/>
+    </pattern>
+    <pattern id="bO" href="#bE" x="-8"/>
+    <pattern id="scal" x="-3" y="0" width="6" height="3.2" patternUnits="userSpaceOnUse">
+      <path d="M0 0H6V.4A3 2.8 0 0 1 0 .4Z" fill="#9C6F1E"/>
+    </pattern>
+    <pattern id="wallp" x="0" y="0" width="22" height="24" patternUnits="userSpaceOnUse">
+      <rect width="22" height="24" fill="url(#sand)"/>
+      <rect width="1.4" height="24" fill="#CDAA66"/>
+      <path d="M5 22V11Q5 5 11 5Q17 5 17 11V22Z" fill="#7A2A2A" stroke="#B2842A" stroke-width="1"/>
+    </pattern>
+    <g id="kalasa">
+      <path d="M-6 0H6L4.5-4H-4.5Z" fill="url(#goldH)" stroke="#8C6420" stroke-width=".6"/>
+      <ellipse cy="-12" rx="7.5" ry="8.5" fill="url(#goldH)" stroke="#8C6420" stroke-width=".8"/>
+      <rect x="-3.2" y="-24" width="6.4" height="6" fill="url(#goldH)"/>
+      <ellipse cy="-24" rx="5" ry="1.8" fill="#E9C468" stroke="#8C6420" stroke-width=".6"/>
+      <path d="M0-25C-2.5-29-2.5-32 0-36C2.5-32 2.5-29 0-25Z" fill="url(#goldH)" stroke="#8C6420" stroke-width=".5"/>
+    </g>
+    <g id="side">
+      <rect x="-48" y="236" width="96" height="14" fill="url(#bE)" stroke="#B2842A" stroke-width="1"/>
+      <rect x="-48" y="250" width="96" height="12" fill="url(#sand)" stroke="#B2842A" stroke-width="1"/>
+      <rect x="-48" y="236" width="96" height="26" fill="url(#shade)"/>
+      <path d="M-9 262V252Q-9 244 0 244Q9 244 9 252V262Z" fill="url(#doorGlow)" stroke="#B2842A" stroke-width="1.2"/>
+      <rect x="-54" y="232" width="108" height="4" fill="url(#gold)" stroke="#8C6420" stroke-width=".6"/>
+      <rect x="-40" y="218" width="80" height="14" fill="url(#bO)" stroke="#B2842A" stroke-width=".8"/>
+      <rect x="-40" y="218" width="80" height="14" fill="url(#shade)"/>
+      <rect x="-46" y="214" width="92" height="4" fill="url(#gold)" stroke="#8C6420" stroke-width=".6"/>
+      <rect x="-32" y="200" width="64" height="14" fill="url(#bE)" stroke="#B2842A" stroke-width=".8"/>
+      <rect x="-32" y="200" width="64" height="14" fill="url(#shade)"/>
+      <rect x="-38" y="196" width="76" height="4" fill="url(#gold)" stroke="#8C6420" stroke-width=".6"/>
+      <rect x="-24" y="182" width="48" height="14" fill="url(#bO)" stroke="#B2842A" stroke-width=".8"/>
+      <rect x="-24" y="182" width="48" height="14" fill="url(#shade)"/>
+      <rect x="-30" y="178" width="60" height="4" fill="url(#gold)" stroke="#8C6420" stroke-width=".6"/>
+      <path d="M-20 178V174Q-20 166 0 166Q20 166 20 174V178Z" fill="url(#gold)" stroke="#8C6420" stroke-width=".7"/>
+      <path d="M-11 178V175Q-11 171 0 171Q11 171 11 175V178Z" fill="#6A2222"/>
+      <use href="#kalasa" transform="translate(0 166) scale(.5)"/>
+    </g>
+    <g id="lot">
+      <g stroke="#D5648F" stroke-width=".6" stroke-linejoin="round" fill="url(#petal)">
+        <path d="M0 0C-4-3-5-10 0-16C5-10 4-3 0 0Z" transform="rotate(-56)"/>
+        <path d="M0 0C-4-3-5-10 0-16C5-10 4-3 0 0Z" transform="rotate(56)"/>
+        <path d="M0 0C-4-3-5-10 0-16C5-10 4-3 0 0Z" transform="rotate(-28)"/>
+        <path d="M0 0C-4-3-5-10 0-16C5-10 4-3 0 0Z" transform="rotate(28)"/>
+        <path d="M0 0C-4-3-5-10 0-16C5-10 4-3 0 0Z" transform="scale(1.1)"/>
+      </g>
+    </g>
+  </defs>
+
+  <circle cx="300" cy="150" r="170" fill="url(#sun)"/>
+
+  <!-- compound wall -->
+  <rect x="10" y="232" width="580" height="6" fill="url(#gold)" stroke="#8C6420" stroke-width=".7"/>
+  <rect x="16" y="238" width="568" height="24" fill="url(#wallp)" stroke="#B2842A" stroke-width="1"/>
+
+  <use href="#side" transform="translate(150 0)"/>
+  <use href="#side" transform="translate(450 0)"/>
+
+  <!-- central gopuram -->
+  <g transform="translate(300 0)">
+    <rect x="-94" y="218" width="188" height="4" fill="url(#gold)" stroke="#8C6420" stroke-width=".7"/>
+    <rect x="-88" y="222" width="176" height="28" fill="url(#bO)" stroke="#B2842A" stroke-width="1"/>
+    <rect x="-88" y="250" width="176" height="12" fill="url(#sand)" stroke="#B2842A" stroke-width="1"/>
+    <rect x="-88" y="222" width="176" height="40" fill="url(#shade)"/>
+    <rect x="-26" y="228" width="6" height="34" fill="#CDAA66" stroke="#B2842A" stroke-width=".7"/>
+    <rect x="20" y="228" width="6" height="34" fill="#CDAA66" stroke="#B2842A" stroke-width=".7"/>
+    <path d="M-22 262V240Q-22 220 0 220Q22 220 22 240V262Z" fill="url(#gold)" stroke="#8C6420" stroke-width="1"/>
+    <path d="M-15 262V242Q-15 227 0 227Q15 227 15 242V262Z" fill="url(#doorGlow)"/>
+
+    <rect x="-80" y="204" width="160" height="14" fill="url(#bE)" stroke="#B2842A" stroke-width=".8"/>
+    <rect x="-80" y="204" width="160" height="14" fill="url(#shade)"/>
+    <rect x="-86" y="200" width="172" height="4" fill="url(#gold)" stroke="#8C6420" stroke-width=".6"/>
+    <rect x="-72" y="186" width="144" height="14" fill="url(#bO)" stroke="#B2842A" stroke-width=".8"/>
+    <rect x="-72" y="186" width="144" height="14" fill="url(#shade)"/>
+    <rect x="-78" y="182" width="156" height="4" fill="url(#gold)" stroke="#8C6420" stroke-width=".6"/>
+    <rect x="-64" y="168" width="128" height="14" fill="url(#bE)" stroke="#B2842A" stroke-width=".8"/>
+    <rect x="-64" y="168" width="128" height="14" fill="url(#shade)"/>
+    <rect x="-70" y="164" width="140" height="4" fill="url(#gold)" stroke="#8C6420" stroke-width=".6"/>
+    <rect x="-56" y="150" width="112" height="14" fill="url(#bO)" stroke="#B2842A" stroke-width=".8"/>
+    <rect x="-56" y="150" width="112" height="14" fill="url(#shade)"/>
+    <rect x="-62" y="146" width="124" height="4" fill="url(#gold)" stroke="#8C6420" stroke-width=".6"/>
+    <rect x="-48" y="132" width="96" height="14" fill="url(#bE)" stroke="#B2842A" stroke-width=".8"/>
+    <rect x="-48" y="132" width="96" height="14" fill="url(#shade)"/>
+    <rect x="-54" y="128" width="108" height="4" fill="url(#gold)" stroke="#8C6420" stroke-width=".6"/>
+    <rect x="-40" y="114" width="80" height="14" fill="url(#bO)" stroke="#B2842A" stroke-width=".8"/>
+    <rect x="-40" y="114" width="80" height="14" fill="url(#shade)"/>
+    <rect x="-46" y="110" width="92" height="4" fill="url(#gold)" stroke="#8C6420" stroke-width=".6"/>
+
+    <path d="M-38 110V104Q-38 92 0 92Q38 92 38 104V110Z" fill="url(#gold)" stroke="#8C6420" stroke-width=".8"/>
+    <path d="M-22 110V105Q-22 98 0 98Q22 98 22 105V110Z" fill="#6A2222" stroke="#8C6420" stroke-width=".6"/>
+    <use href="#kalasa" transform="translate(-24 99) scale(.42)"/>
+    <use href="#kalasa" transform="translate(24 99) scale(.42)"/>
+    <use href="#kalasa" transform="translate(-12 94) scale(.5)"/>
+    <use href="#kalasa" transform="translate(12 94) scale(.5)"/>
+    <use href="#kalasa" transform="translate(0 92) scale(.68)"/>
+  </g>
+
+  <!-- steps -->
+  <rect x="262" y="262" width="76" height="6" fill="url(#gold)" stroke="#8C6420" stroke-width=".6"/>
+  <rect x="252" y="268" width="96" height="6" fill="url(#gold)" stroke="#8C6420" stroke-width=".6"/>
+  <rect x="242" y="274" width="116" height="6" fill="url(#gold)" stroke="#8C6420" stroke-width=".6"/>
+
+  <!-- lamp posts -->
+  <g transform="translate(206 262)">
+    <rect x="-6" y="-3" width="12" height="4" rx="1" fill="url(#gold)"/>
+    <rect x="-1.6" y="-44" width="3.2" height="42" fill="url(#goldH)"/>
+    <path d="M-7-44H7L5-50H-5Z" fill="url(#gold)" stroke="#8C6420" stroke-width=".5"/>
+    <path class="f" d="M0-50C-2.8-53-2.8-58 0-64C2.8-58 2.8-53 0-50Z" fill="#FFB52E"/>
+  </g>
+  <g transform="translate(394 262)">
+    <rect x="-6" y="-3" width="12" height="4" rx="1" fill="url(#gold)"/>
+    <rect x="-1.6" y="-44" width="3.2" height="42" fill="url(#goldH)"/>
+    <path d="M-7-44H7L5-50H-5Z" fill="url(#gold)" stroke="#8C6420" stroke-width=".5"/>
+    <path class="f f2" d="M0-50C-2.8-53-2.8-58 0-64C2.8-58 2.8-53 0-50Z" fill="#FFB52E"/>
+  </g>
+
+  <!-- lotus pond -->
+  <rect x="0" y="280" width="600" height="30" fill="url(#water)"/>
+  <path d="M24 292H84M120 300H196M404 300H480M516 292H576M236 304H364" fill="none" stroke="#fff" stroke-opacity=".6" stroke-width="1.3" stroke-linecap="round"/>
+  <ellipse cx="96" cy="296" rx="22" ry="4.5" fill="#4C8F5A"/>
+  <ellipse cx="504" cy="296" rx="22" ry="4.5" fill="#4C8F5A"/>
+  <ellipse cx="206" cy="300" rx="18" ry="3.8" fill="#4C8F5A"/>
+  <ellipse cx="394" cy="300" rx="18" ry="3.8" fill="#4C8F5A"/>
+  <use href="#lot" transform="translate(96 296) scale(1.15)"/>
+  <use href="#lot" transform="translate(504 296) scale(1.15)"/>
+  <use href="#lot" transform="translate(206 300)"/>
+  <use href="#lot" transform="translate(394 300)"/>
+  <use href="#lot" transform="translate(300 304) scale(1.3)"/>
+</svg>

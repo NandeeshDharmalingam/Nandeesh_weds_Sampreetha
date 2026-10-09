@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 40" width="320" height="40">
+  <defs>
+    <linearGradient id="fl" x1="0" x2="1">
+      <stop offset="0" stop-color="#C9962F" stop-opacity="0"/>
+      <stop offset="1" stop-color="#C9962F"/>
+    </linearGradient>
+    <linearGradient id="fr" x1="0" x2="1">
+      <stop offset="0" stop-color="#C9962F"/>
+      <stop offset="1" stop-color="#C9962F" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="gd" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#E7C25E"/>
+      <stop offset="1" stop-color="#B8862B"/>
+    </linearGradient>
+    <path id="pais" d="M0 0C-7-3-9-13-1-18C6-15 9-6 4 0C2 3-1 3 0 0Z" fill="url(#gd)"/>
+    <path id="lp" d="M0 0C-5-4-6-12 0-18C6-12 5-4 0 0Z" fill="url(#gd)" stroke="#8C6420" stroke-width=".6" stroke-linejoin="round"/>
+  </defs>
+  <rect x="8" y="19.2" width="124" height="1.6" fill="url(#fl)"/>
+  <rect x="188" y="19.2" width="124" height="1.6" fill="url(#fr)"/>
+  <circle cx="56" cy="20" r="2.2" fill="#C9962F"/>
+  <circle cx="76" cy="20" r="1.6" fill="#C9962F"/>
+  <circle cx="264" cy="20" r="2.2" fill="#C9962F"/>
+  <circle cx="244" cy="20" r="1.6" fill="#C9962F"/>
+  <use href="#pais" transform="translate(118 26) rotate(-12)"/>
+  <use href="#pais" transform="translate(202 26) rotate(12) scale(-1 1)"/>
+  <g transform="translate(160 31)">
+    <use href="#lp" transform="rotate(-62) scale(.8)"/>
+    <use href="#lp" transform="rotate(62) scale(.8)"/>
+    <use href="#lp" transform="rotate(-32)"/>
+    <use href="#lp" transform="rotate(32)"/>
+    <use href="#lp" transform="scale(1.1)"/>
+  </g>
+  <circle cx="160" cy="31.5" r="1.6" fill="#8C6420"/>
+</svg>

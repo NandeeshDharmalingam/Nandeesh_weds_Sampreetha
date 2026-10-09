@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="p" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#F3E5BF"/>
+      <stop offset=".6" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#FFF3F3"/>
+    </linearGradient>
+    <path id="b" d="M32 32C24 25 23 12 32 3c9 9 8 22 0 29z"/>
+  </defs>
+  <g fill="url(#p)" stroke="#D9C79E" stroke-width=".8" stroke-linejoin="round">
+    <g transform="rotate(30 32 32) translate(32 32) scale(.9) translate(-32 -32)">
+      <use href="#b"/>
+      <use href="#b" transform="rotate(60 32 32)"/>
+      <use href="#b" transform="rotate(120 32 32)"/>
+      <use href="#b" transform="rotate(180 32 32)"/>
+      <use href="#b" transform="rotate(240 32 32)"/>
+      <use href="#b" transform="rotate(300 32 32)"/>
+    </g>
+    <use href="#b"/>
+    <use href="#b" transform="rotate(60 32 32)"/>
+    <use href="#b" transform="rotate(120 32 32)"/>
+    <use href="#b" transform="rotate(180 32 32)"/>
+    <use href="#b" transform="rotate(240 32 32)"/>
+    <use href="#b" transform="rotate(300 32 32)"/>
+  </g>
+  <circle cx="32" cy="32" r="3.4" fill="#F1D27A"/>
+  <circle cx="32" cy="32" r="1.5" fill="#DDAE45"/>
+</svg>

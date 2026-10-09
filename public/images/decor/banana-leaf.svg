@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 320" width="330" height="320">
+  <defs>
+    <linearGradient id="lg" gradientUnits="userSpaceOnUse" x1="0" y1="-50" x2="0" y2="70">
+      <stop offset="0" stop-color="#2E7A3C"/>
+      <stop offset=".5" stop-color="#6DB04F"/>
+      <stop offset="1" stop-color="#2A6B35"/>
+    </linearGradient>
+    <path id="shape" d="M0 0C70-48 200-46 310 22C210 66 80 62 0 0Z"/>
+    <clipPath id="cp"><use href="#shape"/></clipPath>
+    <pattern id="vu" width="12" height="5.2" patternUnits="userSpaceOnUse" patternTransform="rotate(-68)">
+      <rect width="12" height="1.1" fill="#1F5B2A" opacity=".28"/>
+    </pattern>
+    <pattern id="vd" width="12" height="5.2" patternUnits="userSpaceOnUse" patternTransform="rotate(68)">
+      <rect width="12" height="1.1" fill="#1F5B2A" opacity=".28"/>
+    </pattern>
+    <g id="leaf">
+      <use href="#shape" fill="url(#lg)"/>
+      <g clip-path="url(#cp)">
+        <rect x="0" y="-70" width="320" height="74" fill="url(#vu)"/>
+        <rect x="0" y="4" width="320" height="80" fill="url(#vd)"/>
+      </g>
+      <path d="M0 0C95 5 200 12 310 22" fill="none" stroke="#CFE59A" stroke-width="2.4" stroke-linecap="round"/>
+      <use href="#shape" fill="none" stroke="#1F5B2A" stroke-opacity=".35" stroke-width="1"/>
+    </g>
+  </defs>
+  <use href="#leaf" transform="translate(8 8) rotate(86) scale(.74)"/>
+  <use href="#leaf" transform="translate(8 8) rotate(62) scale(.84)"/>
+  <use href="#leaf" transform="translate(8 8) rotate(38) scale(.92)"/>
+  <use href="#leaf" transform="translate(8 8) rotate(12)"/>
+</svg>

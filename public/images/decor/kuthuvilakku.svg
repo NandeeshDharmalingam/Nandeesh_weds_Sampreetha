@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="still" viewBox="0 0 120 300" width="120" height="300" role="img" aria-label="Brass kuthu vilakku lamp">
+  <style>
+    .f{transform-box:fill-box;transform-origin:50% 100%;animation:fl 1.7s ease-in-out infinite}
+    .d1{animation-delay:-.35s}.d2{animation-delay:-.8s}.d3{animation-delay:-1.2s}.d4{animation-delay:-.55s}
+    .g{animation:gl 2.4s ease-in-out infinite}
+    @keyframes fl{0%,100%{transform:scale(1,1) rotate(0)}30%{transform:scale(.92,1.09) rotate(-2.5deg)}62%{transform:scale(1.06,.94) rotate(2.5deg)}}
+    @keyframes gl{0%,100%{opacity:.85}50%{opacity:1}}
+    @media (prefers-reduced-motion:reduce){.f,.g{animation:none}}
+    svg:target .f,svg:target .g{animation:none}
+  </style>
+  <defs>
+    <linearGradient id="br" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7E500F"/>
+      <stop offset=".3" stop-color="#E9C25E"/>
+      <stop offset=".55" stop-color="#F8E39B"/>
+      <stop offset=".8" stop-color="#C08A25"/>
+      <stop offset="1" stop-color="#7A4D0E"/>
+    </linearGradient>
+    <radialGradient id="fl" cx="50%" cy="78%" r="62%">
+      <stop offset="0" stop-color="#FFFBD6"/>
+      <stop offset=".45" stop-color="#FFC445"/>
+      <stop offset="1" stop-color="#F0701A"/>
+    </radialGradient>
+    <radialGradient id="glow">
+      <stop offset="0" stop-color="#FFD66B" stop-opacity=".6"/>
+      <stop offset="1" stop-color="#FFD66B" stop-opacity="0"/>
+    </radialGradient>
+    <g id="cup">
+      <ellipse rx="7.5" ry="2.6" fill="#E2B84F" stroke="#7E500F" stroke-width=".7"/>
+      <path d="M-7.5 0C-6.5 7 6.5 7 7.5 0Z" fill="url(#br)" stroke="#7E500F" stroke-width=".6"/>
+    </g>
+  </defs>
+
+  <ellipse class="g" cx="60" cy="118" rx="58" ry="52" fill="url(#glow)"/>
+
+  <path d="M20 152C20 106 40 84 60 84C80 84 100 106 100 152" fill="none" stroke="url(#br)" stroke-width="4.5" stroke-linecap="round"/>
+  <path d="M28 152C28 112 44 93 60 93C76 93 92 112 92 152" fill="none" stroke="#C08A25" stroke-width="1.4" stroke-dasharray="1.5 3.5" stroke-linecap="round"/>
+  <path d="M60 80V68" stroke="url(#br)" stroke-width="3"/>
+  <circle cx="60" cy="81" r="4.5" fill="url(#br)" stroke="#7E500F" stroke-width=".6"/>
+  <circle cx="60" cy="64" r="4" fill="url(#br)" stroke="#7E500F" stroke-width=".6"/>
+
+  <rect x="54" y="186" width="12" height="86" fill="url(#br)"/>
+  <ellipse cx="60" cy="288" rx="44" ry="8" fill="url(#br)" stroke="#7E500F" stroke-width=".8"/>
+  <path d="M20 288C20 276 34 268 60 268C86 268 100 276 100 288Z" fill="url(#br)" stroke="#7E500F" stroke-width=".8"/>
+  <path d="M32 285Q34 276 42 272M48 285Q49 275 54 271M72 285Q71 275 66 271M88 285Q86 276 78 272" fill="none" stroke="#7E500F" stroke-opacity=".5" stroke-width="1"/>
+  <ellipse cx="60" cy="262" rx="15" ry="5" fill="url(#br)" stroke="#7E500F" stroke-width=".6"/>
+  <ellipse cx="60" cy="249" rx="11" ry="4" fill="url(#br)" stroke="#7E500F" stroke-width=".6"/>
+  <ellipse cx="60" cy="228" rx="16" ry="14" fill="url(#br)" stroke="#7E500F" stroke-width=".7"/>
+  <ellipse cx="60" cy="207" rx="12.5" ry="4" fill="url(#br)" stroke="#7E500F" stroke-width=".6"/>
+  <ellipse cx="60" cy="197" rx="10" ry="3.5" fill="url(#br)" stroke="#7E500F" stroke-width=".6"/>
+
+  <path d="M16 152C22 172 42 182 60 182C78 182 98 172 104 152Z" fill="url(#br)" stroke="#7E500F" stroke-width=".8"/>
+  <ellipse cx="60" cy="152" rx="46" ry="9" fill="#EBCB74" stroke="#7E500F" stroke-width=".8"/>
+  <ellipse cx="60" cy="152" rx="38" ry="6.5" fill="none" stroke="#B27A1E" stroke-width=".8" stroke-dasharray="1 3"/>
+
+  <use href="#cup" x="24" y="155.5"/>
+  <use href="#cup" x="42" y="158.5"/>
+  <use href="#cup" x="60" y="159.5"/>
+  <use href="#cup" x="78" y="158.5"/>
+  <use href="#cup" x="96" y="155.5"/>
+
+  <g transform="translate(24 154)"><path class="f d1" d="M0 0C-5-4-5-11 0-19C5-11 5-4 0 0Z" fill="url(#fl)"/></g>
+  <g transform="translate(42 157)"><path class="f d2" d="M0 0C-5.5-4-5.5-12 0-22C5.5-12 5.5-4 0 0Z" fill="url(#fl)"/></g>
+  <g transform="translate(60 158)"><path class="f d3" d="M0 0C-6-4-6-14 0-26C6-14 6-4 0 0Z" fill="url(#fl)"/></g>
+  <g transform="translate(78 157)"><path class="f d4" d="M0 0C-5.5-4-5.5-12 0-22C5.5-12 5.5-4 0 0Z" fill="url(#fl)"/></g>
+  <g transform="translate(96 154)"><path class="f d2" d="M0 0C-5-4-5-11 0-19C5-11 5-4 0 0Z" fill="url(#fl)"/></g>
+</svg>
