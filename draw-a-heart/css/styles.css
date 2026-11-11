@@ -1,0 +1,804 @@
+/* ============================================================================
+   Nandeesh & Sampreetha - "Draw a heart" invitation
+   Pastel, South Indian: blush, mint and cream, with temple gold.
+   1. Fonts and tokens   2. Base   3. Sky and ornaments   4. Sound button
+   5. Gate (draw a heart)   6. Story: heart, emblem, hands, petals
+   7. Details: names, Ganesha art, date, events   8. Second page background
+   9. Still mode
+   ========================================================================== */
+
+/* 1. FONTS AND TOKENS ------------------------------------------------------ */
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("../assets/fonts/cormorant-garamond.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: italic;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("../assets/fonts/cormorant-garamond-italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Great Vibes";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/great-vibes.woff2") format("woff2");
+}
+
+:root {
+  --cream: #fff8ee;
+  --paper: #fbeed8;
+  --blush: #fbe3e6;
+  --mint: #d7eee3;
+  --ink: #2a5b4d;
+  --ink-dim: rgba(42, 91, 77, 0.78);
+  --ink-faint: rgba(42, 91, 77, 0.52);
+  --gold: #b3862c;
+  --gold-light: #e8c775;
+  --rose: #d9798f;
+  --maroon: #8b3d52;
+  --line: rgba(179, 134, 44, 0.5);
+
+  --font-script: "Great Vibes", "Snell Roundhand", "Brush Script MT", cursive;
+  --font-serif: "Cormorant Garamond", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --font-kn: "Noto Serif Kannada", "Noto Sans Kannada", "Nirmala UI", "Kannada Sangam MN", Tunga, var(--font-serif);
+
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --story-length: 380vh;
+}
+
+/* 2. BASE ------------------------------------------------------------------ */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  background: var(--cream);
+  color-scheme: light;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  line-height: 1.5;
+  color: var(--ink);
+  background: transparent;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+html.js body.is-gate { overflow: hidden; }
+
+[lang="kn"] { font-family: var(--font-kn); }
+
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+p { margin: 0; }
+
+.noscript {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-content: center;
+  padding: 2rem;
+  text-align: center;
+  background: var(--cream);
+  font-size: 1.3rem;
+  line-height: 1.8;
+}
+
+/* 3. SKY AND ORNAMENTS (first page) ------------------------------------------ */
+.bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background:
+    radial-gradient(90% 50% at 50% -4%, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0) 70%),
+    radial-gradient(70% 45% at 92% 52%, rgba(249, 196, 210, 0.6), rgba(249, 196, 210, 0) 70%),
+    radial-gradient(80% 55% at 4% 76%, rgba(178, 222, 200, 0.75), rgba(178, 222, 200, 0) 70%),
+    linear-gradient(180deg, #fdf2e4 0%, #fbe1e2 40%, #dcefe4 80%, #cde7da 100%);
+}
+.bg__rays {
+  position: absolute;
+  left: 50%;
+  top: -6%;
+  width: 150vmax;
+  height: 150vmax;
+  margin-left: -75vmax;
+  background: conic-gradient(from 134deg at 50% 0%,
+    rgba(255, 255, 255, 0) 0deg, rgba(255, 255, 255, 0.34) 6deg, rgba(255, 255, 255, 0) 13deg,
+    rgba(255, 255, 255, 0) 22deg, rgba(255, 255, 255, 0.24) 30deg, rgba(255, 255, 255, 0) 38deg,
+    rgba(255, 255, 255, 0) 47deg, rgba(255, 255, 255, 0.3) 55deg, rgba(255, 255, 255, 0) 63deg,
+    rgba(255, 255, 255, 0) 72deg, rgba(255, 255, 255, 0.2) 79deg, rgba(255, 255, 255, 0) 86deg,
+    rgba(255, 255, 255, 0) 360deg);
+  -webkit-mask-image: radial-gradient(closest-side, #000 20%, rgba(0, 0, 0, 0) 100%);
+  mask-image: radial-gradient(closest-side, #000 20%, rgba(0, 0, 0, 0) 100%);
+  transform-origin: 50% 0;
+  animation: rays 36s ease-in-out infinite alternate;
+}
+@keyframes rays { from { transform: rotate(-3deg); } to { transform: rotate(3deg); } }
+
+.bg__glow { position: absolute; border-radius: 50%; }
+.bg__glow--a {
+  width: 70vmax; height: 70vmax; left: -26vmax; top: 6%;
+  background: radial-gradient(circle, rgba(255, 214, 190, 0.5), rgba(255, 214, 190, 0) 66%);
+  animation: drift-a 30s ease-in-out infinite alternate;
+}
+.bg__glow--b {
+  width: 60vmax; height: 60vmax; right: -22vmax; bottom: -10%;
+  background: radial-gradient(circle, rgba(196, 232, 214, 0.65), rgba(196, 232, 214, 0) 66%);
+  animation: drift-b 36s ease-in-out infinite alternate;
+}
+@keyframes drift-a { to { transform: translate3d(8vmax, 4vmax, 0); } }
+@keyframes drift-b { to { transform: translate3d(-8vmax, -5vmax, 0); } }
+
+/* A big rangoli (kolam) that turns slowly behind the hands. */
+.bg__mandala {
+  position: absolute;
+  left: var(--m-x, 50%);
+  top: var(--m-y, 62%);
+  width: var(--m-size, 90vmin);
+  height: var(--m-size, 90vmin);
+  margin: calc(var(--m-size, 90vmin) / -2) 0 0 calc(var(--m-size, 90vmin) / -2);
+  opacity: var(--m-o, 0);
+  animation: spin 160s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Temple towers in the mist at the bottom. */
+.bg__gopuram {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 30vh;
+  opacity: var(--g-o, 0);
+}
+.bg__gopuram svg { display: block; width: 100%; height: 100%; }
+
+/* 4. SOUND BUTTON ----------------------------------------------------------- */
+.sound {
+  position: fixed;
+  z-index: 60;
+  top: max(14px, env(safe-area-inset-top));
+  right: max(14px, env(safe-area-inset-right));
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  border: 1px solid rgba(179, 134, 44, 0.6);
+  border-radius: 50%;
+  background: rgba(255, 250, 240, 0.62);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  color: var(--ink);
+  cursor: pointer;
+  transition: border-color 0.3s, background 0.3s;
+}
+.sound:hover { border-color: var(--gold); background: rgba(255, 250, 240, 0.85); }
+.sound svg { width: 20px; height: 20px; }
+.sound__bars { display: none; align-items: flex-end; gap: 3px; height: 16px; }
+.sound__bars i {
+  width: 2.5px;
+  height: 100%;
+  border-radius: 2px;
+  background: var(--gold);
+  transform-origin: bottom;
+  animation: eq 1.3s ease-in-out infinite;
+}
+.sound__bars i:nth-child(2) { animation-delay: -0.4s; animation-duration: 1.1s; }
+.sound__bars i:nth-child(3) { animation-delay: -0.8s; animation-duration: 1.5s; }
+.sound__bars i:nth-child(4) { animation-delay: -0.2s; animation-duration: 1.2s; }
+@keyframes eq { 0%, 100% { transform: scaleY(0.25); } 50% { transform: scaleY(1); } }
+.sound.is-on .sound__bars { display: flex; }
+.sound.is-on .sound__off { display: none; }
+.sound.is-idle::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+  animation: ping 2.6s ease-out infinite;
+}
+@keyframes ping { 0% { transform: scale(1); opacity: 0.8; } 100% { transform: scale(1.7); opacity: 0; } }
+
+/* 5. GATE: DRAW A HEART ----------------------------------------------------- */
+.gate {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  background:
+    radial-gradient(60% 45% at 50% 50%, rgba(18, 64, 52, 0.26), rgba(18, 64, 52, 0) 100%),
+    linear-gradient(rgba(30, 86, 72, 0.3), rgba(30, 86, 72, 0.3)),
+    url("../assets/silk.webp") center / cover no-repeat,
+    #e2a2a8;
+  transition: opacity 1.1s var(--ease), visibility 0s linear 1.1s;
+}
+.gate.is-done { opacity: 0; visibility: hidden; pointer-events: none; }
+
+/* zari border, like the edge of a silk saree */
+.gate::before,
+.gate::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  border-radius: 3px;
+}
+.gate::before { inset: 12px; border: 1px solid rgba(255, 238, 196, 0.9); box-shadow: 0 0 0 1px rgba(168, 122, 34, 0.35); }
+.gate::after { inset: 19px; border: 1px dotted rgba(255, 238, 196, 0.8); }
+
+.gate__canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: crosshair;
+  touch-action: none;
+}
+
+.gate__title,
+.gate__hint,
+.gate__auto {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0;
+  text-align: center;
+  pointer-events: none;
+  transition: opacity 0.7s var(--ease);
+}
+.gate__title {
+  bottom: calc(50% + var(--heart-w, 280px) * 0.46 + 1.4rem);
+  font-size: clamp(0.95rem, 3.6vw, 1.25rem);
+  font-weight: 600;
+  letter-spacing: 0.55em;
+  text-indent: 0.55em;
+  text-transform: uppercase;
+  color: #fffaf0;
+  text-shadow: 0 1px 14px rgba(20, 70, 56, 0.7);
+}
+.gate__hint {
+  top: calc(50% + var(--heart-w, 280px) * 0.46 + 1.5rem);
+  font-size: 0.78rem;
+  letter-spacing: 0.46em;
+  text-indent: 0.46em;
+  text-transform: uppercase;
+  color: rgba(255, 250, 240, 0.92);
+  text-shadow: 0 1px 10px rgba(70, 120, 100, 0.5);
+}
+.gate__auto {
+  top: calc(50% + var(--heart-w, 280px) * 0.46 + 4.6rem);
+  left: 50%;
+  right: auto;
+  width: max-content;
+  max-width: 90vw;
+  transform: translateX(-50%) translateY(8px);
+  padding: 0.7rem 1.3rem;
+  border: 1px solid rgba(255, 244, 214, 0.9);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  font: inherit;
+  font-size: 0.78rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #fffaf0;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease), background 0.3s;
+}
+.gate__auto.is-ready,
+.gate__auto:focus-visible { opacity: 1; pointer-events: auto; transform: translateX(-50%); }
+.gate__auto:hover { background: rgba(255, 255, 255, 0.3); }
+.gate.is-success .gate__title,
+.gate.is-success .gate__hint,
+.gate.is-success .gate__auto { opacity: 0; pointer-events: none; }
+.gate.is-help .gate__hint { color: #fff; }
+
+/* 6. STORY: HEART, EMBLEM, HANDS, PETALS ------------------------------------- */
+.story {
+  position: relative;
+  z-index: 3;
+  height: var(--story-length);
+}
+.stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+}
+.stage__hands {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  pointer-events: none;
+  opacity: var(--stage-o, 1);
+}
+
+/* The glossy heart lives above the page, and settles into the emblem at the top of the story. */
+.scene {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 8;
+  display: block;
+  pointer-events: none;
+}
+.scene[hidden],
+.heart[hidden] { display: none; }
+
+/* Flat heart (only used when 3D is not available). */
+.heart {
+  position: fixed;
+  z-index: 8;
+  left: 50%;
+  top: 50%;
+  width: var(--heart-w, 280px);
+  height: var(--heart-w, 280px);
+  margin: calc(var(--heart-w, 280px) / -2) 0 0 calc(var(--heart-w, 280px) / -2);
+  overflow: visible;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate3d(0, var(--hy, 0px), 0) scale(var(--hs, 1));
+  will-change: transform;
+  filter: drop-shadow(0 0 calc(8px + 20px * var(--glow, 0.25)) rgba(232, 120, 150, calc(0.26 + 0.4 * var(--glow, 0.25))));
+}
+.heart__line { stroke-width: var(--sw, 0.012); stroke-dasharray: 1 1.02; stroke-dashoffset: 1; opacity: 0; }
+.heart__fill { opacity: 0; }
+.heart__inner { transform-origin: center; transform-box: fill-box; }
+.heart.is-bloom { opacity: var(--ho, 1); }
+.heart.is-bloom .heart__line { opacity: 1; animation: heart-draw 1.3s var(--ease) forwards; }
+.heart.is-bloom .heart__fill { animation: heart-fill 1.2s ease-out 0.8s forwards; }
+.heart.is-bloom .heart__inner { animation: heart-beat 1.6s ease-in-out 1.7s 1; }
+@keyframes heart-draw { to { stroke-dashoffset: 0; } }
+@keyframes heart-fill { to { opacity: 0.92; } }
+@keyframes heart-beat {
+  0%, 100% { transform: scale(1); }
+  18% { transform: scale(1.09); }
+  36% { transform: scale(1); }
+  54% { transform: scale(1.06); }
+  72% { transform: scale(1); }
+}
+
+/* The Venkatramana emblem (background removed) settles where the heart lands. It lives in the
+   story stage, so it scrolls away with the hands and never sits over the names. */
+.emblem {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  top: var(--e-y, 6vh);
+  width: var(--e-w, 150px);
+  height: var(--e-h, 135px);
+  margin-left: calc(var(--e-w, 150px) / -2);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-12px) scale(0.9);
+  transition: opacity 1.4s var(--ease), transform 1.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.emblem.is-on { opacity: 1; transform: none; }
+.emblem img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 12px rgba(150, 70, 60, 0.2));
+}
+.emblem::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 190%;
+  height: 170%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(closest-side, rgba(255, 240, 200, 0.9), rgba(255, 214, 176, 0.36) 60%, rgba(255, 214, 176, 0) 100%);
+  z-index: -1;
+  pointer-events: none;
+}
+.emblem::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  height: 100%;
+  border: 2px solid rgba(255, 238, 196, 0.95);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0.3);
+  opacity: 0;
+  pointer-events: none;
+}
+.emblem.is-on::after { animation: ring 1.9s ease-out 0.1s 1; }
+@media (prefers-reduced-motion: no-preference) {
+  .emblem::before { animation: aura 4.8s ease-in-out infinite alternate; }
+  .emblem img { animation: float-emblem 6s ease-in-out infinite alternate; }
+}
+@keyframes float-emblem { from { translate: 0 0; } to { translate: 0 -5px; } }
+@keyframes aura {
+  from { opacity: 0.7; transform: translate(-50%, -50%) scale(0.95); }
+  to { opacity: 1; transform: translate(-50%, -50%) scale(1.07); }
+}
+@keyframes ring {
+  0% { opacity: 0.95; transform: translate(-50%, -50%) scale(0.3); }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(2.8); }
+}
+
+/* The petals pour from the touching fingertips down to the names. */
+.cascade {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 4;
+  display: block;
+  pointer-events: none;
+}
+
+.cue {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: max(3.5vh, env(safe-area-inset-bottom));
+  text-align: center;
+  font-size: 0.72rem;
+  letter-spacing: 0.46em;
+  text-indent: 0.46em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  opacity: var(--cue-o, 0);
+  transition: opacity 0.6s var(--ease);
+  pointer-events: none;
+}
+.cue__line {
+  display: block;
+  width: 1px;
+  height: 38px;
+  margin: 0.8rem auto 0;
+  background: linear-gradient(var(--gold), rgba(179, 134, 44, 0));
+  transform-origin: top;
+  animation: cue 2.2s var(--ease) infinite;
+}
+@keyframes cue {
+  0% { transform: scaleY(0); opacity: 1; }
+  60% { transform: scaleY(1); opacity: 1; }
+  100% { transform: scaleY(1); opacity: 0; }
+}
+
+/* 7. DETAILS: NAMES, GANESHA ART, DATE, EVENTS ---------------------------------- */
+.details {
+  position: relative;
+  z-index: 5;
+  overflow-x: hidden;
+  overflow-x: clip;
+  padding: clamp(40px, 7vh, 72px) clamp(14px, 2vw, 28px) clamp(64px, 10vh, 112px);
+  text-align: center;
+  color: var(--ink);
+}
+/* A fine double line frames the second page, like the edge of a silk saree. */
+.details::before {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  border: 1px solid rgba(179, 134, 44, 0.5);
+  border-radius: 6px;
+  box-shadow: inset 0 0 0 4px rgba(255, 250, 240, 0.4), inset 0 0 0 5px rgba(179, 134, 44, 0.22);
+  pointer-events: none;
+}
+
+/* The names sit in the middle; the two Ganesha pictures flank them at the edges of the screen. */
+.names-block {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: min(62vh, 600px);
+  padding: clamp(16px, 3vh, 36px) 0;
+}
+.art {
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  margin: 0;
+  pointer-events: none;
+  translate: 0 calc(var(--dp, 0) * 40px);
+}
+.art img { display: block; width: 100%; height: auto; }
+.art::before {
+  content: "";
+  position: absolute;
+  inset: -12%;
+  z-index: -1;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(255, 222, 160, 0.42), rgba(255, 222, 160, 0) 100%);
+}
+.art--baby {
+  left: 0;
+  width: clamp(170px, 21vw, 340px);
+  transform: translateY(-50%);
+}
+.art--standing {
+  right: 0;
+  width: clamp(150px, 19vw, 300px);
+  transform: translateY(-50%);
+}
+/* The watercolour edges melt into the paper, so no picture frame is visible. */
+.art--baby img {
+  -webkit-mask-image: radial-gradient(ellipse 54% 58% at 58% 58%, #000 62%, transparent 100%);
+  mask-image: radial-gradient(ellipse 54% 58% at 58% 58%, #000 62%, transparent 100%);
+}
+.art--standing img {
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 36%), linear-gradient(180deg, transparent 0%, #000 12%, #000 88%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(90deg, transparent 0%, #000 36%), linear-gradient(180deg, transparent 0%, #000 12%, #000 88%, transparent 100%);
+  mask-composite: intersect;
+}
+
+.names {
+  position: relative;
+  z-index: 2;
+  width: min(100%, clamp(480px, 46vw, 640px));
+  margin-inline: auto;
+}
+.names__blessing {
+  margin-bottom: 0.7rem;
+  font-size: 1rem;
+  letter-spacing: 0.14em;
+  color: var(--gold);
+}
+.names__blessing:empty { display: none; }
+.names__title {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(3rem, 8vw, 6.6rem);
+  line-height: 1.02;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  text-wrap: balance;
+}
+.names__a { display: block; }
+.names__amp {
+  margin-right: 0.12em;
+  font-family: var(--font-script);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.9em;
+  color: var(--gold);
+}
+.names__invite {
+  max-width: 30rem;
+  margin: 1.1rem auto 0;
+  font-size: clamp(1.02rem, 2vw, 1.3rem);
+  font-style: italic;
+  letter-spacing: 0.02em;
+  color: var(--ink-dim);
+  text-wrap: balance;
+}
+
+.details__inner {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 1080px);
+  margin-inline: auto;
+}
+.date {
+  display: grid;
+  justify-items: center;
+  gap: 0.7rem;
+  margin: 0 auto;
+  color: var(--ink);
+}
+.date__num {
+  font-size: clamp(2.5rem, 6vw, 4.4rem);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: 0.08em;
+}
+.date__day {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.46em;
+  text-indent: 0.46em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.rule {
+  position: relative;
+  width: 7rem;
+  height: 1px;
+  margin: clamp(28px, 5vh, 52px) auto;
+  border: 0;
+  background: linear-gradient(90deg, rgba(179, 134, 44, 0), var(--gold), rgba(179, 134, 44, 0));
+}
+.rule::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  background: var(--gold);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.events {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(18px, 2.4vw, 30px);
+  margin-top: clamp(20px, 3vh, 32px);
+}
+.event {
+  position: relative;
+  flex: 0 1 min(100%, 500px);
+  max-width: 500px;
+  margin: 0;
+  padding: clamp(30px, 4vw, 44px) clamp(22px, 3vw, 40px) clamp(28px, 3.6vw, 40px);
+  border: 1px solid rgba(179, 134, 44, 0.5);
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(255, 253, 248, 0.86), rgba(255, 249, 238, 0.66));
+  box-shadow: 0 30px 60px -44px rgba(74, 47, 37, 0.5);
+}
+.event::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px dotted rgba(179, 134, 44, 0.42);
+  border-radius: 18px;
+  pointer-events: none;
+}
+.event__title {
+  margin: 0;
+  font-family: var(--font-script);
+  font-weight: 400;
+  font-size: clamp(2.6rem, 5vw, 3.6rem);
+  line-height: 1.15;
+  color: var(--maroon);
+}
+.event__local { margin-top: 0.2rem; font-size: 0.98rem; letter-spacing: 0.1em; color: var(--ink-dim); }
+.event__row { margin-top: 0.8rem; }
+.event__label {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.42em;
+  text-indent: 0.42em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.event__value { display: block; margin-top: 0.15rem; font-size: 1.22rem; color: var(--ink); }
+.event__value--muted { color: var(--ink-faint); font-style: italic; }
+.event--quiet {
+  flex-basis: 100%;
+  max-width: none;
+  margin: 0.4rem 0 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  color: var(--ink-faint);
+  font-style: italic;
+}
+.event--quiet::before { display: none; }
+.event--quiet strong { color: var(--ink-dim); font-weight: 600; font-style: normal; }
+
+.btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem; margin-top: 1.6rem; }
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.6);
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-shadow: none;
+  color: var(--ink);
+  cursor: pointer;
+  transition: background 0.3s, border-color 0.3s;
+}
+.btn:hover { background: #fff; border-color: var(--gold); }
+
+.closing {
+  margin: clamp(40px, 7vh, 72px) auto 0;
+  font-style: italic;
+  color: var(--ink-dim);
+}
+.closing__names {
+  display: block;
+  margin-top: 0.3rem;
+  font-family: var(--font-script);
+  font-style: normal;
+  font-size: clamp(2.6rem, 6vw, 4.2rem);
+  line-height: 1.2;
+  color: var(--maroon);
+}
+
+.js .reveal { opacity: 0; transform: translateY(18px); transition: opacity 1s var(--ease), transform 1s var(--ease); }
+.js .reveal.is-in { opacity: 1; transform: none; }
+.js .art img { opacity: 0; transform: scale(1.04); transition: opacity 1.8s var(--ease), transform 2.6s var(--ease); }
+.js .art.is-in img { opacity: 1; transform: none; }
+
+/* 8. SECOND PAGE BACKGROUND, AND THE PHONE LAYOUT ------------------------------ */
+.paper {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: var(--paper-o, 0);
+  background:
+    radial-gradient(120% 60% at 50% 0%, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0) 60%),
+    radial-gradient(80% 50% at 100% 100%, rgba(236, 206, 168, 0.45), rgba(236, 206, 168, 0) 70%),
+    radial-gradient(70% 45% at 0% 100%, rgba(204, 230, 214, 0.4), rgba(204, 230, 214, 0) 70%),
+    linear-gradient(180deg, #fff6e6 0%, var(--paper) 55%, #f6e3c6 100%);
+}
+
+/* Phones and narrow windows: the Ganesha pictures sit above and below the names, not beside them. */
+@media (max-width: 900px) {
+  .details { padding-inline: 12px; }
+  .details::before { inset: 9px; }
+  .names-block { display: flex; flex-direction: column; align-items: center; min-height: 0; gap: clamp(14px, 3vh, 26px); }
+  .art { position: relative; top: auto; left: auto; right: auto; transform: none; }
+  .art--baby { width: min(clamp(140px, 38vw, 190px), 26.7vh); }
+  .art--standing { width: min(clamp(140px, 40vw, 200px), 25.9vh); }
+  .art--standing img {
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 24%, #000 76%, transparent 100%), linear-gradient(180deg, transparent 0%, #000 10%, #000 90%, transparent 100%);
+    -webkit-mask-composite: source-in;
+    mask-image: linear-gradient(90deg, transparent 0%, #000 24%, #000 76%, transparent 100%), linear-gradient(180deg, transparent 0%, #000 10%, #000 90%, transparent 100%);
+    mask-composite: intersect;
+  }
+  .names { width: min(100%, 560px); }
+}
+
+
+
+
+@media (max-height: 520px) and (min-aspect-ratio: 11/10) {
+  .names__blessing { display: none; }
+  .names__invite { margin-top: 0.4rem; font-size: 0.95rem; }
+}
+
+/* 9. STILL MODE: reduced motion, or animations: false in config.js ---------- */
+.no-anim .bg__rays,
+.no-anim .bg__glow,
+.no-anim .bg__mandala,
+.no-anim .art::before,
+.no-anim .emblem::before,
+.no-anim .emblem::after,
+.no-anim .emblem img,
+.no-anim .cue__line,
+.no-anim .sound__bars i,
+.no-anim .sound.is-idle::after { animation: none; }
+.no-anim .sound__bars i { transform: scaleY(0.6); }
+.no-anim .cue { transition: none; }
+.no-anim .emblem { transition: none; }
+.no-anim.js .reveal { opacity: 1; transform: none; transition: none; }
+.no-anim.js .art img { opacity: 1; transform: none; transition: none; }
+.no-anim .heart.is-bloom .heart__line { animation: none; stroke-dashoffset: 0; }
+.no-anim .heart.is-bloom .heart__fill { animation: none; opacity: 0.92; }
+.no-anim .heart.is-bloom .heart__inner { animation: none; }
+.no-anim .gate,
+.no-anim .gate__title,
+.no-anim .gate__hint,
+.no-anim .gate__auto { transition: none; }
+.no-anim .story { height: auto; }
+.no-anim .stage { position: relative; height: 100vh; height: 100svh; }

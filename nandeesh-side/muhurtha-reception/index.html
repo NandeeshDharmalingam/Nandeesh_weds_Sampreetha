@@ -1,0 +1,154 @@
+<!doctype html>
+<!-- Muhurtha + Reception invitation. Edit ../config.js (one folder up); the pictures and code are shared with the reception folder. -->
+<html lang="en" data-version="both">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#0a2a7c">
+  <title>Nandeesh &amp; Sampreetha | Wedding Invitation</title>
+  <meta name="description" content="Nandeesh and Sampreetha invite you to celebrate their wedding on 19 February 2027.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Nandeesh &amp; Sampreetha | Wedding Invitation">
+  <meta property="og:description" content="Draw a heart to open the invitation.">
+  <!-- After publishing, change the next line to the full address of share.jpg (see INVITATIONS.md), so WhatsApp can show the picture. -->
+  <meta property="og:image" content="../assets/share.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../assets/fonts/cormorant-garamond.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/great-vibes.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../css/styles.css">
+  <script>(function (h) { h.className += ' js is-locked'; try { if (matchMedia('(prefers-reduced-motion: reduce)').matches) { h.className += ' no-anim'; } } catch (e) {} })(document.documentElement);</script>
+  <script src="../config.js" charset="utf-8" defer></script>
+  <script src="../js/calendar.js" defer></script>
+  <script src="../js/art.js" defer></script>
+  <script src="../js/audio.js" defer></script>
+  <script src="../js/gate.js" defer></script>
+  <script src="../js/main.js" defer></script>
+</head>
+<body class="is-gate">
+
+<noscript>
+  <p class="noscript">Please turn on JavaScript to open this invitation.<br>Nandeesh &amp; Sampreetha &middot; 19 February 2027</p>
+</noscript>
+
+<!-- Shared drawings: the heart (used three times) and three small icons for the events -->
+<svg class="defs" width="0" height="0" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="hg-fill" gradientUnits="userSpaceOnUse" x1="0" y1="-0.5" x2="0" y2="0.5">
+      <stop offset="0" stop-color="#fff6d6"/>
+      <stop offset="0.5" stop-color="#ffd978"/>
+      <stop offset="1" stop-color="#f0a93a"/>
+    </linearGradient>
+    <linearGradient id="hg-line" gradientUnits="userSpaceOnUse" x1="0" y1="-0.5" x2="0" y2="0.5">
+      <stop offset="0" stop-color="#fff3c4"/>
+      <stop offset="1" stop-color="#f0b33c"/>
+    </linearGradient>
+    <linearGradient id="hp-fill" gradientUnits="userSpaceOnUse" x1="0" y1="-0.5" x2="0" y2="0.5">
+      <stop offset="0" stop-color="#ffeaf1"/>
+      <stop offset="0.55" stop-color="#f9c4d5"/>
+      <stop offset="1" stop-color="#f1a8c0"/>
+    </linearGradient>
+    <linearGradient id="hp-line" gradientUnits="userSpaceOnUse" x1="0" y1="-0.5" x2="0" y2="0.5">
+      <stop offset="0" stop-color="#fff6f9"/>
+      <stop offset="1" stop-color="#f6bace"/>
+    </linearGradient>
+    <path id="hg-shape"/>
+    <symbol id="ico-date" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+    <symbol id="ico-time" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3.2 2"/></symbol>
+    <symbol id="ico-place" viewBox="0 0 24 24"><path d="M12 21s6.5-5.6 6.5-11a6.5 6.5 0 1 0-13 0c0 5.4 6.5 11 6.5 11z"/><circle cx="12" cy="10" r="2.4"/></symbol>
+  </defs>
+</svg>
+
+<!-- PAGE 1: the sky, the gopuram, the trees and the names -->
+<div id="hero" class="hero">
+  <div class="hero__stage" aria-hidden="true">
+    <div class="sky-group">
+      <div class="layer layer--clouds"><img id="img-clouds" src="../assets/clouds.webp" alt="" width="1355" height="2048" decoding="async"></div>
+    </div>
+    <div class="layer layer--tower"><div class="rise"><img id="tower" src="../assets/gopuram.webp" alt="" width="1355" height="2048" decoding="async"></div></div>
+    <div class="leaf-group">
+      <div class="layer layer--leaves"><div class="enter"><img id="img-leaves" src="../assets/leaves.webp" alt="" width="1355" height="2048" decoding="async"></div></div>
+    </div>
+  </div>
+  <div class="hero__shade" aria-hidden="true"></div>
+
+  <header id="names-block" class="hero__text">
+    <div id="logo" class="hero__logo"><img src="../assets/venkatramana.webp" alt="Sri Venkateswara" width="507" height="453" decoding="async"></div>
+    <h1 id="names" class="hero__names">
+      <span id="groom" class="name"></span>
+      <span id="slot" class="slot" aria-hidden="true">
+        <svg class="slot__heart" viewBox="-0.58 -0.58 1.16 1.16" focusable="false">
+          <use href="#hg-shape" class="heart__pf"/>
+          <use href="#hg-shape" class="heart__pl"/>
+        </svg>
+      </span>
+      <span id="bride" class="name"></span>
+    </h1>
+    <p id="line" class="hero__line"></p>
+    <p id="date" class="hero__date"></p>
+  </header>
+
+  <a id="cue" class="hero__cue" href="#invite"><span class="hero__cue-in"><span id="cue-text">Scroll</span><i aria-hidden="true"></i></span></a>
+</div>
+
+<!-- PAGE 2: the temple doorway with the two events -->
+<div id="spacer" class="spacer" aria-hidden="true"></div>
+<main id="sheet" class="sheet">
+  <div id="frame" class="frame">
+    <div class="frame__top" aria-hidden="true"></div>
+    <div id="frame-mid" class="frame__mid" aria-hidden="true"></div>
+    <div class="frame__bottom" aria-hidden="true"></div>
+
+    <section id="invite" class="invite" aria-label="Invitation">
+      <p id="ganesha" class="invite__ganesha reveal" lang="kn"></p>
+      <p id="lead" class="invite__lead reveal"></p>
+      <div id="couple" class="couple"></div>
+      <p id="invite-line" class="invite__line reveal"></p>
+      <div id="events" class="events"></div>
+      <p id="closing" class="invite__closing reveal"></p>
+    </section>
+  </div>
+</main>
+
+<!-- Soft clouds that gather over the gate and then drift apart to reveal page 1 -->
+<div id="mist" class="mist" aria-hidden="true"></div>
+
+<!-- Draw a heart to begin -->
+<section id="gate" class="gate" aria-label="Open the invitation">
+  <div class="gate__bg" aria-hidden="true">
+    <i class="gate__halo"></i>
+    <canvas id="mandala" class="gate__mandala"></canvas>
+    <div id="stars" class="gate__stars"></div>
+  </div>
+  <i class="gate__ripple"></i>
+  <i class="gate__ripple gate__ripple--b"></i>
+  <i class="gate__bloom"></i>
+  <canvas id="draw" class="gate__canvas" aria-hidden="true"></canvas>
+  <p id="gate-title" class="gate__title"></p>
+  <p id="gate-hint" class="gate__hint" aria-live="polite"></p>
+  <button id="gate-auto" class="gate__auto" type="button"></button>
+</section>
+
+<!-- The heart you drew rises and settles between the two names -->
+<div id="heartwrap" class="heartwrap" aria-hidden="true" hidden>
+  <svg class="heart" viewBox="-0.58 -0.58 1.16 1.16" focusable="false">
+    <use href="#hg-shape" class="heart__fill"/>
+    <use href="#hg-shape" class="heart__line"/>
+    <use href="#hg-shape" class="heart__pf"/>
+    <use href="#hg-shape" class="heart__pl"/>
+  </svg>
+</div>
+
+<button id="sound" class="sound is-idle" type="button" aria-pressed="false" aria-label="Turn music on">
+  <svg class="sound__off" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <path d="M4 9.5v5h3.8l5.2 4v-13l-5.2 4H4z" fill="currentColor"/>
+    <path d="M16.5 9.5l5 5M21.5 9.5l-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  </svg>
+  <span class="sound__bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+</button>
+
+</body>
+</html>

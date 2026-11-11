@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#f6c9cf">
+  <title>Nandeesh &amp; Sampreetha | Wedding Invitation</title>
+  <meta name="description" content="Nandeesh and Sampreetha invite you to celebrate their wedding on 19 February 2027.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Nandeesh &amp; Sampreetha | Wedding Invitation">
+  <meta property="og:description" content="Draw a heart to open the invitation.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/cormorant-garamond.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/cormorant-garamond-italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/silk.webp" as="image">
+  <link rel="preload" href="assets/art/venkatramana-logo.png" as="image">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>(function (h) { h.className += ' js'; try { if (matchMedia('(prefers-reduced-motion: reduce)').matches) { h.className += ' no-anim'; } } catch (e) {} })(document.documentElement);</script>
+  <script src="config.js" charset="utf-8" defer></script>
+  <script src="assets/vendor/three.min.js" defer></script>
+  <script src="js/calendar.js" defer></script>
+  <script src="js/audio.js" defer></script>
+  <script src="js/scene3d.js" defer></script>
+  <script src="js/hands.js" defer></script>
+  <script src="js/cascade.js" defer></script>
+  <script src="js/draw.js" defer></script>
+  <script src="js/scroll.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body class="is-gate">
+
+<noscript>
+  <p class="noscript">Please turn on JavaScript to open this invitation.<br>Nandeesh &amp; Sampreetha &middot; 19 February 2027</p>
+</noscript>
+
+<!-- Sky for the first page: rays, soft glows, a slowly turning rangoli and temple towers -->
+<div class="bg" aria-hidden="true">
+  <i class="bg__rays"></i>
+  <i class="bg__glow bg__glow--a"></i>
+  <i class="bg__glow bg__glow--b"></i>
+  <img id="mandala" class="bg__mandala" alt="" width="1024" height="1024">
+  <div id="gopuram" class="bg__gopuram"></div>
+</div>
+
+<!-- Paper for the second page (fades in as the details arrive) -->
+<div class="paper" aria-hidden="true"></div>
+
+<button id="sound" class="sound is-idle" type="button" aria-pressed="false" aria-label="Sound">
+  <svg class="sound__off" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <path d="M4 9.5v5h3.8l5.2 4v-13l-5.2 4H4z" fill="currentColor"/>
+    <path d="M16.5 9.5l5 5M21.5 9.5l-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  </svg>
+  <span class="sound__bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+</button>
+
+<!-- Draw a heart to begin -->
+<section id="gate" class="gate" aria-label="Open the invitation">
+  <canvas id="draw" class="gate__canvas" aria-hidden="true"></canvas>
+  <p id="gate-title" class="gate__title">Draw a heart</p>
+  <p id="gate-hint" class="gate__hint" aria-live="polite">to begin</p>
+  <button id="gate-auto" class="gate__auto" type="button">Tap to draw it for me</button>
+</section>
+
+<!-- The heart (3D, or a flat one if the phone cannot do 3D) settles into the emblem -->
+<canvas id="scene" class="scene" aria-hidden="true"></canvas>
+<svg id="heart" class="heart" viewBox="-0.58 -0.58 1.16 1.16" aria-hidden="true" focusable="false" hidden>
+  <defs>
+    <linearGradient id="hg-line" gradientUnits="userSpaceOnUse" x1="0" y1="-0.5" x2="0" y2="0.5">
+      <stop offset="0" stop-color="#ffe3e8"/>
+      <stop offset="1" stop-color="#f08aa2"/>
+    </linearGradient>
+    <linearGradient id="hg-fill" gradientUnits="userSpaceOnUse" x1="0" y1="-0.5" x2="0" y2="0.5">
+      <stop offset="0" stop-color="#f9c0cc"/>
+      <stop offset="1" stop-color="#e56f90"/>
+    </linearGradient>
+  </defs>
+  <g class="heart__inner">
+    <path id="heart-fill" class="heart__fill" fill="url(#hg-fill)"/>
+    <path id="heart-line" class="heart__line" pathLength="1" fill="none" stroke="url(#hg-line)" stroke-linejoin="round" stroke-linecap="round"/>
+  </g>
+</svg>
+
+<!-- Scroll story: two real hands slide in from the sides and touch, beneath the Venkatramana emblem -->
+<main id="story" class="story" inert>
+  <div id="stage" class="stage">
+    <canvas id="hands" class="stage__hands" role="img" aria-label="His hand and her hand reaching towards each other until their fingertips touch"></canvas>
+    <div id="emblem" class="emblem">
+      <img src="assets/art/venkatramana-logo.png" alt="Sri Venkateswara emblem" width="520" height="468" decoding="async">
+    </div>
+    <p id="cue" class="cue" aria-hidden="true"><span id="cue-text">Scroll</span><i class="cue__line"></i></p>
+  </div>
+</main>
+
+<!-- Flower petals pour from the touching fingertips down to the names -->
+<canvas id="cascade" class="cascade" aria-hidden="true"></canvas>
+
+<section id="details" class="details" aria-label="Wedding details" inert>
+  <div class="names-block">
+    <figure class="art art--baby" aria-hidden="true">
+      <img src="assets/art/ganesha-baby.jpg" alt="" width="736" height="1104" loading="lazy" decoding="async">
+    </figure>
+    <div id="names" class="names">
+      <p id="blessing" class="names__blessing reveal" lang="kn"></p>
+      <h1 class="names__title reveal">
+        <span id="groom" class="names__a"></span>
+        <span class="names__amp">&amp;</span>
+        <span id="bride" class="names__b"></span>
+      </h1>
+      <p id="invite" class="names__invite reveal"></p>
+    </div>
+    <figure class="art art--standing" aria-hidden="true">
+      <img src="assets/art/ganesha-standing.jpg" alt="" width="736" height="1307" loading="lazy" decoding="async">
+    </figure>
+  </div>
+  <div class="details__inner">
+    <hr class="rule reveal">
+    <p id="date" class="date reveal"></p>
+    <div id="events" class="events"></div>
+    <hr class="rule reveal">
+    <p id="closing" class="closing reveal"></p>
+  </div>
+</section>
+
+</body>
+</html>
