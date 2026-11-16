@@ -65,14 +65,16 @@
   }
 
   /* ---------- page 2: each name with its parents beneath ---------- */
-  // "Smt. A & Sri. B" becomes two blocks that never split inside a name; the & stays at the end of the first line.
-  function parentsLine(text) {
-    var line = el('p', 'who__parents');
-    var parts = String(text).split('&').map(function (s) { return s.trim(); }).filter(Boolean);
-    parts.forEach(function (part, i) {
-      if (i) { line.appendChild(document.createTextNode(' ')); }
-      line.appendChild(el('span', 'who__unit', part + (i < parts.length - 1 ? '\u00a0&' : '')));
-    });
+  // "Smt. A & Sri. B" or "Smt. A and Sri. B" becomes two blocks that never split inside a name; the & or "and" stays at the end of the first line.
+  function parentsLine(text, cls) {
+    var line = el('p', cls || 'who__parents');
+    var bits = String(text).split(/\s+(&|and)\s+/i);
+    for (var i = 0; i < bits.length; i += 2) {
+      var name = bits[i].trim();
+      if (!name) { continue; }
+      if (line.firstChild) { line.appendChild(document.createTextNode(' ')); }
+      line.appendChild(el('span', 'who__unit', name + (bits[i + 1] ? '\u00a0' + bits[i + 1] : '')));
+    }
     return line;
   }
 
@@ -97,7 +99,14 @@
 
   function renderCouple() {
     var P = people();
+    var E = CFG.elders;
     var host = $('#couple');
+    if (E && E.names) {
+      var elders = el('div', 'elders reveal');
+      if (E.intro) { elders.appendChild(el('p', 'elders__intro', E.intro)); }
+      elders.appendChild(parentsLine(E.names, 'who__parents elders__names'));
+      host.appendChild(elders);
+    }
     host.appendChild(who(P[0].name, P[0].family));
     var amp = el('p', 'couple__amp reveal', '&');
     amp.setAttribute('aria-hidden', 'true');

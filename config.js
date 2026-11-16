@@ -41,7 +41,7 @@ window.WEDDING_CONFIG = {
       bellLabel: 'Ring the temple bell (soft sound)',
     },
     hero: {
-      eyebrow: 'Together with their families',
+      eyebrow: 'Together with our families',
       invite: 'invite you to bless and celebrate their wedding',
       scrollHint: 'Scroll for the invitation',
     },

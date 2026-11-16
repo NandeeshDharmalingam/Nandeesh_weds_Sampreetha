@@ -14,12 +14,17 @@ window.INVITE_CONFIG = {
 
   /* THE FAMILIES, shown under each name on the second page.
        relation  the small words before the parents, for example 'son of'.
-       parents   written the way you want it to appear; put & between the two names.
+       parents   written the way you want it to appear; put & or and between the two names.
                  '' hides that line. */
   families: {
     groom: { relation: 'son of', parents: 'Smt. Saritha D & Sri. Dharmalingam M' },
     bride: { relation: 'daughter of', parents: 'Smt. Sudha B & Sri. Dr. M S Sudheer Kumar' },
   },
+
+  /* THE ELDERS, shown above the names on the second page (for example the grandparents).
+       intro  the words above their names.
+       names  written like the parents, with & or and between them.  '' hides the whole block. */
+  elders: { intro: '', names: '' },
 
   // From the save-the-date card (19.02.2027). Format YYYY-MM-DD.
   wedding: { date: '2027-02-19', timeZone: 'Asia/Kolkata' },
@@ -34,7 +39,7 @@ window.INVITE_CONFIG = {
     blessing: 'ಶ್ರೀ ಗಣೇಶಾಯ ನಮಃ', // '' hides this line
     hero: { line: 'are getting married', scroll: 'Scroll' },
     page2: {
-      lead: 'Together with their families',
+      lead: 'Together with our families',
       closing: 'With love and blessings',
     },
     toFollow: 'Details to follow',
@@ -83,7 +88,7 @@ window.INVITE_CONFIG = {
       titleLocal: 'ಮುಹೂರ್ತ',
       date: '2027-02-19',
       timeText: 'Morning',
-      startTime: '',
+      startTime: '07:30',
       endTime: '',
       venueName: '',
       address: '',

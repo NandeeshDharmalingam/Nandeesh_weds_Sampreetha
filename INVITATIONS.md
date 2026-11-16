@@ -53,7 +53,9 @@ families: {
 },
 ```
 
-Write the parents the way you want them to appear, with `&` between the two names. `''` hides that line.
+Write the parents the way you want them to appear, with `&` or `and` between the two names. `''` hides that line.
+
+**Elders.** The `elders` block puts a line of blessing and the names of the elders (for example the grandparents) above the first name on the second page. Sampreetha's side uses it; Nandeesh's side has it empty, and `''` hides it.
 
 **Times, venue and map link.** The `events` list has one block per box (`muhurtha`, `reception`):
 
